@@ -46,8 +46,8 @@ total_drowsy_time = 0
 def beep_alarm():
     global head_alarm_on
     while head_alarm_on:
-        winsound.Beep(2500, 700)  # 700ms beep
-        time.sleep(0.1)           # 0.1s gap
+        winsound.Beep(2500, 700) 
+        time.sleep(0.1)           
 
 def pt(lm, i, w, h):
     return np.array([lm[i].x * w, lm[i].y * h])
@@ -88,7 +88,7 @@ while True:
     if results.multi_face_landmarks:
         lm = results.multi_face_landmarks[0].landmark
 
-        # -------- DRAW LANDMARKS --------
+       
         for p in lm:
             cv2.circle(frame, (int(p.x*w), int(p.y*h)), 1, (0,255,0), -1)
 
@@ -114,12 +114,12 @@ while True:
             head_alarm_on = False
             reset_system()
         else:
-            # trigger alarm only for continuous closure
+          
             trigger_alarm = False
             if eyes_closed:
                 if eye_closed_start is None:
                     eye_closed_start = now
-                elif now - eye_closed_start >= 2:  # ignore blinks
+                elif now - eye_closed_start >= 2:  
                     trigger_alarm = True
             else:
                 eye_closed_start = None
@@ -132,15 +132,15 @@ while True:
             else:
                 head_drop_start = None
 
-            # start drowsy timer
+            
             if trigger_alarm and drowsy_start is None:
                 drowsy_start = now
 
-            # update total drowsy time
+            
             if drowsy_start:
                 total_drowsy_time = int(now - drowsy_start)
 
-            # start alarm thread
+           
             if trigger_alarm and not head_alarm_on:
                 head_alarm_on = True
                 threading.Thread(target=beep_alarm, daemon=True).start()
@@ -173,14 +173,14 @@ while True:
             lane_change_time = now
             show_reduce_speed = False
             hazard_on = False
-            indicator_start = now  # 1s delay for green indicator
+            indicator_start = now  
 
         
         if lane_change_time and indicator_start and now - indicator_start >= 1 and not indicator_on:
             indicator_on = True
 
         
-        if indicator_on and now - indicator_start >= 6:  # display 5s
+        if indicator_on and now - indicator_start >= 6:  
             indicator_on = False
             hazard_on = True
 
@@ -216,3 +216,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
