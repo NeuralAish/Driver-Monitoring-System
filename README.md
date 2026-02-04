@@ -29,7 +29,6 @@ A real-time driver drowsiness detection system using computer vision.
 
 Output:
 
-
 <img width="1278" height="747" alt="Output" src="https://github.com/user-attachments/assets/6e247ceb-8f71-455a-bdeb-b960bcd2119f" />
 
 
