@@ -6,6 +6,10 @@ A real-time driver drowsiness detection system using computer vision.
 
 ## Features
 
+- Eye closure detection
+- Head drop detection
+- Yawning detection
+- Drowsy time tracking
 - Take Control alert
 - Lane Change alert
 - Hazard & indicator simulation
