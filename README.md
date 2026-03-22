@@ -23,10 +23,7 @@ A real-time driver drowsiness detection system using computer vision.
 
 ## How to Run (Windows)
 
-- Double-click
-- Install Python 3.9+
-- Double-click the `.py` file
-- Webcam will start automatically
+
 
 Output:
 
