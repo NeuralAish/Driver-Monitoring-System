@@ -14,12 +14,7 @@ A real-time driver drowsiness detection system using computer vision.
 - Lane Change alert
 - Hazard & indicator simulation
 
-## Tech Stack
-- Python
-- OpenCV
-- MediaPipe
-- NumPy
-- Pygame
+
 
 ## How to Run (Windows)
 
